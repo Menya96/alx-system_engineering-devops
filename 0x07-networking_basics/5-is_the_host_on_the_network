@@ -13,3 +13,4 @@ elif [ $# -gt 1]; then
 else 
 	ping "$1" -c 5
 fi
+
