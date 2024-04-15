@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#A script that only displays litsening ports and 
+#shows the PID and the name of the program to which each socket belongs
+
+#-l flag for listening sockets and -p for the PIDS
+
+netstat -l -p

@@ -6,4 +6,7 @@ sudo cp /etc/hosts /etc/hosts.backup
 #Add custom entries to hosts file
 echo "127.0.0.2 localhost" |sudo tee -a /etc/hosts > /dev/null
 echo "8.8.8.8 facebook.com" |sudo tee -a /etc/hosts > /dev/null
+#Display the updated hosts file
+echo "The /etc/hosts file has been updated. Here's the current content:"
+cat /etc/hosts
 
