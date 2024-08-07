@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#Script displaying currently runing processes
+#Displays lines containing the bash word
+#Shellcheck disable=SC2009
+
+ps aufx | grep bash
+
