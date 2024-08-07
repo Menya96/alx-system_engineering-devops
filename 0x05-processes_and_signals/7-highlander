@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#Script that displas to infinity and beyond indefinitely
+#In between each iteration of the loop add a sleep 2
+
+trap 'echo "I am invinsible!!!"'
+	SIGTERM
+while true
+do
+	echo "To infinity and beyond"
+	sleep 2
+done
+
