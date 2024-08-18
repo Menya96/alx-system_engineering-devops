@@ -1,43 +1,8 @@
 #!/usr/bin/env bash
-
-# Update package list and install Nginx
-sudo apt update
-sudo apt install -y nginx
-
-# Create the Hello World HTML file
-echo "<!DOCTYPE html>
-<html>
-<head>
-    <title>Hello World</title>
-</head>
-<body>
-    <h1>Hello, world!</h1>
-    <p>Welcome to my Nginx server.</p>
-</body>
-</html>" | sudo tee /var/www/html/index.html
-
-# Configure Nginx to serve the Hello World page
-sudo bash -c 'cat > /etc/nginx/sites-available/default <<EOF
-server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
-
-    root /var/www/html;
-    index index.html;
-
-    server_name _;
-
-    location / {
-        try_files \$uri \$uri/ =404;
-    }
-}
-EOF'
-
-# Test the Nginx configuration
-sudo nginx -t
-
-# Reload Nginx to apply the changes
-sudo nginx -s reload
-
-echo "Nginx has been configured to serve a Hello World page at the root URL."
+# Installs nginx server
+apt-get update
+apt-get -y install nginx
+ufw allow 'Nginx HTTP'
+echo "Hello World!" > /var/www/html/index.html
+service nginx start
 
